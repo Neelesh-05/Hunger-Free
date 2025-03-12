@@ -1,0 +1,34 @@
+{% extends 'donor/donorbase.html' %}
+{% load static %}
+{% block contents %}
+
+<section class="ftco-section ftco-cart">
+    <div class="container">
+        <div class="row">
+        <div class="col-md-12 ftco-animate">
+            <div class="cart-list">
+                <table class="table">
+                    <thead class="thead-primary">
+                      <tr class="text-center">
+                        <th>S.No&nbsp;</th>
+                        <th>Lunch</th>
+                        <th>Location</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                     {% for i in data %}
+                  <tr class="text-center">
+                <td>{{forloop.counter}}</td>
+                <td class="product-name">{{i.cropname}} <p>{{i.description}}</p></td>
+                <td class="quantity"> {{i.price}}</td>
+            </tr>
+            {% endfor %}
+                    </tbody>
+                  </table>
+              </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+{% endblock %}

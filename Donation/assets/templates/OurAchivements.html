@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center achivementCSS">Our Achivements</h1>
+        </div>
+    </div>
+</div>
+
+
+<style>
+.achivementCSS{
+  color:purple;
+  font-size:95px;
+  background-image:url("https://img.freepik.com/free-photo/cup-man-achievement-success-honor_1150-1719.jpg?w=1060&t=st=1693019672~exp=1693020272~hmac=350c831ed6c25337cf3e632339bf90a0c26d2654e9aa03733a28f36050e13554");
+  height:100vh;
+  background-size:cover;
+}
+
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery {
+  flex: 0 0 calc(25% - 20px); /* Adjust the width and margin based on your needs */
+  margin: 10px;
+}
+
+</style>
+
+
+{% for achivement in our_achivements %}
+
+<div class="gallery">
+    <img src="{{ achivement.file.url }}"  width="600" height="400">
+    <div class="desc">{{ achivement.description }}</div>
+</div>
+
+{% endfor %}
+
+
+{% endblock %}
